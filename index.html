@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EmmyRealtor | The Real Estate Queen - Emmybrigs Investment Limited RC 1515627</title>
+<meta name="description" content="EmmyRealtor - Your trusted partner in real estate. Buy, sell, rent and invest in premium properties across Nigeria.">
+<style>
+:root{
+  --red:#C8102E; --red-dark:#8B0A1E; --gold:#D4AF37; --gold-light:#F0D77B;
+  --dark:#0D0D0D; --dark-2:#161616; --white:#FFFFFF; --grey:#F5F5F5;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',Arial,sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden;}
+h1,h2,h3,h4{font-family:Georgia,'Times New Roman',serif;}
+
+/* ---------- TOP BAR ---------- */
+.topbar{background:var(--dark);color:#fff;font-size:.8rem;padding:.45rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem;}
+.topbar a{color:var(--gold-light);text-decoration:none;}
+.topbar .rc{color:#bbb;}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:1000;background:rgba(13,13,13,.96);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:.6rem 5%;box-shadow:0 2px 20px rgba(0,0,0,.4);}
+nav .brand{display:flex;align-items:center;gap:.8rem;}
+nav .brand img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 0 12px rgba(212,175,55,.5);}
+nav .brand .name{color:#fff;font-family:Georgia,serif;font-size:1.25rem;font-weight:700;letter-spacing:.5px;}
+nav .brand .name span{color:var(--red);font-style:italic;}
+nav .brand .tag{color:var(--gold);font-size:.62rem;letter-spacing:2.5px;text-transform:uppercase;}
+nav ul{display:flex;list-style:none;gap:2rem;align-items:center;}
+nav ul a{color:#ddd;text-decoration:none;font-size:.9rem;letter-spacing:.5px;transition:.3s;position:relative;}
+nav ul a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--red),var(--gold));transition:.3s;}
+nav ul a:hover{color:var(--gold);}
+nav ul a:hover::after{width:100%;}
+.nav-cta{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff!important;padding:.55rem 1.4rem;border-radius:30px;font-weight:600;}
+.nav-cta::after{display:none;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(200,16,46,.45);}
+.hamburger{display:none;color:#fff;font-size:1.6rem;background:none;border:none;cursor:pointer;}
+
+/* ---------- ANIMATED BACKGROUND SHAPES ---------- */
+.bg-shapes{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;}
+.bg-shapes span{position:absolute;border-radius:50%;filter:blur(70px);opacity:.4;animation:floatBg 20s ease-in-out infinite;}
+.bg-shapes span:nth-child(1){width:360px;height:360px;background:var(--red);top:-100px;left:-80px;animation-duration:24s;}
+.bg-shapes span:nth-child(2){width:280px;height:280px;background:var(--gold);bottom:-80px;right:-60px;animation-duration:28s;animation-delay:-6s;}
+.bg-shapes span:nth-child(3){width:220px;height:220px;background:var(--gold-light);top:35%;left:55%;animation-duration:22s;animation-delay:-10s;}
+.bg-shapes span:nth-child(4){width:180px;height:180px;background:var(--red);top:15%;right:15%;animation-duration:26s;animation-delay:-14s;}
+@keyframes floatBg{
+  0%,100%{transform:translate(0,0) scale(1);}
+  33%{transform:translate(50px,-40px) scale(1.12);}
+  66%{transform:translate(-40px,35px) scale(.92);}
+}
+
+/* ---------- HERO ---------- */
+.hero{min-height:92vh;position:relative;overflow:hidden;display:flex;align-items:center;background:linear-gradient(rgba(10,10,10,.72),rgba(10,10,10,.82)),url('assets/hero-bg.jpeg') center/cover no-repeat;}
+.hero-inner{position:relative;z-index:1;padding:0 5%;max-width:1200px;color:#fff;}
+.hero .badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(212,175,55,.15);border:1px solid var(--gold);color:var(--gold-light);padding:.4rem 1.1rem;border-radius:30px;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:1.4rem;}
+.hero h1{font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:1.12;margin-bottom:1.2rem;}
+.hero h1 .accent{background:linear-gradient(90deg,var(--red) 0%,#ff5c72 50%,var(--gold) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic;}
+.hero p{font-size:1.1rem;color:#d8d8d8;max-width:560px;margin-bottom:2.2rem;line-height:1.7;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 2rem;border-radius:40px;text-decoration:none;font-weight:600;font-size:.95rem;letter-spacing:.5px;transition:.3s;cursor:pointer;border:none;}
+.btn-red{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;box-shadow:0 8px 24px rgba(200,16,46,.4);}
+.btn-red:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(200,16,46,.55);}
+.btn-gold{background:transparent;color:var(--gold);border:2px solid var(--gold);}
+.btn-gold:hover{background:var(--gold);color:var(--dark);}
+.hero-stats{display:flex;gap:3rem;margin-top:3.2rem;flex-wrap:wrap;}
+.hero-stats .stat h3{font-size:2rem;color:var(--gold);font-family:Georgia,serif;}
+.hero-stats .stat p{color:#bbb;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;}
+
+/* ---------- SECTIONS ---------- */
+section{padding:5.5rem 5%;}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 3.5rem;}
+.sec-head .kicker{color:var(--red);letter-spacing:3px;text-transform:uppercase;font-size:.78rem;font-weight:700;}
+.sec-head h2{font-size:clamp(1.9rem,3.5vw,2.7rem);margin:.6rem 0 .9rem;}
+.sec-head h2 em{color:var(--red);}
+.sec-head p{color:#666;line-height:1.7;}
+.gold-line{width:70px;height:3px;background:linear-gradient(90deg,var(--red),var(--gold));margin:1rem auto 0;border-radius:2px;animation:shimmerLine 3s ease-in-out infinite alternate;}
+@keyframes shimmerLine{0%{opacity:.6;width:50px;}100%{opacity:1;width:90px;}}
+
+/* ---------- SERVICES ---------- */
+.services{background:var(--grey);}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.6rem;max-width:1200px;margin:0 auto;}
+.svc-card{background:#fff;border-radius:18px;padding:2.2rem 1.8rem;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:.35s;position:relative;overflow:hidden;border-top:4px solid transparent;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red),var(--gold));transform:scaleX(0);transition:.35s;transform-origin:left;}
+.svc-card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,.12);}
+.svc-card:hover::before{transform:scaleX(1);}
+.svc-icon{width:60px;height:60px;border-radius:14px;background:linear-gradient(135deg,var(--red),var(--red-dark));display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:1.3rem;box-shadow:0 6px 16px rgba(200,16,46,.3);}
+.svc-card h3{font-size:1.15rem;margin-bottom:.7rem;}
+.svc-card p{color:#666;font-size:.9rem;line-height:1.65;}
+
+/* ---------- LISTINGS ---------- */
+.filter-bar{display:flex;justify-content:center;gap:.7rem;margin-bottom:2.6rem;flex-wrap:wrap;}
+.filter-btn{padding:.55rem 1.5rem;border-radius:30px;border:1.5px solid #ddd;background:#fff;cursor:pointer;font-size:.85rem;font-weight:600;transition:.3s;color:#555;}
+.filter-btn.active,.filter-btn:hover{background:var(--red);border-color:var(--red);color:#fff;}
+.listings-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.8rem;max-width:1280px;margin:0 auto;}
+.prop-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.08);transition:.35s;position:relative;}
+.prop-card:hover{transform:translateY(-8px);box-shadow:0 20px 44px rgba(0,0,0,.16);}
+.prop-img{height:230px;overflow:hidden;position:relative;}
+.prop-img img{width:100%;height:100%;object-fit:cover;transition:.6s;}
+.prop-card:hover .prop-img img{transform:scale(1.1);}
+.prop-tag{position:absolute;top:14px;left:14px;background:var(--red);color:#fff;padding:.32rem .9rem;border-radius:20px;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;z-index:2;}
+.prop-tag.sale{background:var(--gold);color:var(--dark);}
+.prop-body{padding:1.4rem 1.5rem 1.6rem;}
+.prop-price{font-size:1.35rem;font-weight:800;color:var(--red);font-family:Georgia,serif;}
+.prop-price small{font-size:.78rem;color:#888;font-weight:400;font-family:'Segoe UI',sans-serif;}
+.prop-body h3{font-size:1.05rem;margin:.5rem 0 .3rem;}
+.prop-loc{color:#888;font-size:.85rem;display:flex;align-items:center;gap:.35rem;}
+.prop-feats{display:flex;gap:1.1rem;margin-top:1rem;padding-top:1rem;border-top:1px solid #eee;color:#666;font-size:.82rem;}
+.prop-feats span{display:flex;align-items:center;gap:.35rem;}
+
+/* ---------- ABOUT ---------- */
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;}
+.about-img{position:relative;}
+.about-img img.main{width:100%;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.2);}
+.about-img .logo-float{position:absolute;bottom:-30px;right:-20px;width:130px;height:130px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);box-shadow:0 10px 30px rgba(0,0,0,.35);}
+.about-img::before{content:'';position:absolute;top:-18px;left:-18px;width:100%;height:100%;border:3px solid var(--gold);border-radius:20px;z-index:-1;}
+.about-text h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.2rem;}
+.about-text h2 em{color:var(--red);}
+.about-text p{color:#666;line-height:1.8;margin-bottom:1.1rem;}
+.about-points{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:1.6rem 0 2rem;}
+.about-points div{display:flex;align-items:center;gap:.6rem;font-size:.92rem;font-weight:600;}
+.about-points .tick{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;}
+
+/* ---------- WHY ---------- */
+.why{position:relative;overflow:hidden;background:linear-gradient(rgba(13,13,13,.94),rgba(13,13,13,.94)),url('assets/why-bg.jpeg') center/cover fixed;color:#fff;}
+.why .sec-head,.why-grid{position:relative;z-index:1;}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.6rem;max-width:1200px;margin:0 auto;}
+.why-card{background:rgba(255,255,255,.05);border:1px solid rgba(212,175,55,.25);border-radius:16px;padding:2rem 1.6rem;text-align:center;transition:.35s;}
+.why-card:hover{background:rgba(212,175,55,.1);transform:translateY(-6px);border-color:var(--gold);}
+.why-card .num{font-size:2.4rem;font-family:Georgia,serif;color:var(--gold);margin-bottom:.6rem;}
+.why-card h3{font-size:1.05rem;margin-bottom:.6rem;}
+.why-card p{color:#bbb;font-size:.86rem;line-height:1.6;}
+
+/* ---------- TESTIMONIALS ---------- */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem;max-width:1200px;margin:0 auto;}
+.testi-card{background:var(--grey);border-radius:16px;padding:2rem;position:relative;}
+.testi-card::before{content:'\201C';position:absolute;top:.6rem;right:1.4rem;font-size:4.5rem;font-family:Georgia,serif;color:var(--gold);opacity:.35;}
+.testi-card p{color:#555;line-height:1.75;font-style:italic;font-size:.94rem;margin-bottom:1.4rem;}
+.testi-who{display:flex;align-items:center;gap:.9rem;}
+.testi-who .avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:Georgia,serif;}
+.testi-who h4{font-size:.95rem;}
+.testi-who span{color:#888;font-size:.78rem;}
+.stars{color:var(--gold);letter-spacing:2px;margin-bottom:.8rem;}
+
+/* ---------- CONTACT ---------- */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:3.5rem;max-width:1150px;margin:0 auto;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12);}
+.contact-info{background:linear-gradient(150deg,var(--dark) 0%,#2a0a10 100%);color:#fff;padding:3rem 2.6rem;}
+.contact-info h3{font-size:1.6rem;margin-bottom:.6rem;}
+.contact-info>p{color:#bbb;font-size:.9rem;line-height:1.7;margin-bottom:2rem;}
+.c-item{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start;}
+.c-item .ic{width:44px;height:44px;border-radius:12px;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.4);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.c-item h4{font-size:.82rem;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.25rem;}
+.c-item p,.c-item a{color:#ddd;font-size:.92rem;text-decoration:none;line-height:1.5;}
+.c-item a:hover{color:var(--gold);}
+.socials{display:flex;gap:.8rem;margin-top:2rem;}
+.socials a{width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(212,175,55,.5);display:flex;align-items:center;justify-content:center;color:var(--gold);text-decoration:none;font-size:1rem;transition:.3s;}
+.socials a:hover{background:var(--gold);color:var(--dark);transform:translateY(-3px);}
+.contact-form{padding:3rem 2.6rem;}
+.contact-form h3{font-size:1.5rem;margin-bottom:.4rem;}
+.contact-form>p{color:#777;font-size:.88rem;margin-bottom:1.8rem;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.f-group{margin-bottom:1.1rem;}
+.f-group label{display:block;font-size:.8rem;font-weight:600;margin-bottom:.4rem;color:#444;}
+.f-group input,.f-group select,.f-group textarea{width:100%;padding:.85rem 1rem;border:1.5px solid #e2e2e2;border-radius:10px;font-size:.9rem;font-family:inherit;transition:.3s;background:#fafafa;}
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{outline:none;border-color:var(--red);background:#fff;box-shadow:0 0 0 3px rgba(200,16,46,.08);}
+.f-group textarea{resize:vertical;min-height:110px;}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--dark);color:#aaa;padding:4rem 5% 1.5rem;}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2.5rem;max-width:1250px;margin:0 auto 3rem;}
+.foot-brand img{width:64px;height:64px;border-radius:50%;border:2px solid var(--gold);margin-bottom:1rem;}
+.foot-brand h4{color:#fff;font-size:1.2rem;margin-bottom:.7rem;}
+.foot-brand p{font-size:.86rem;line-height:1.7;}
+footer h5{color:#fff;font-size:.95rem;margin-bottom:1.1rem;letter-spacing:1px;text-transform:uppercase;}
+footer ul{list-style:none;}
+footer ul li{margin-bottom:.65rem;}
+footer ul a{color:#999;text-decoration:none;font-size:.88rem;transition:.3s;}
+footer ul a:hover{color:var(--gold);padding-left:5px;}
+.foot-bottom{border-top:1px solid #2a2a2a;padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.8rem;color:#777;max-width:1250px;margin:0 auto;}
+.foot-bottom b{color:var(--gold);}
+
+/* ---------- FLOATING WHATSAPP ---------- */
+.float-wa{position:fixed;bottom:26px;right:26px;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.45);z-index:900;transition:.3s;text-decoration:none;}
+.float-wa:hover{transform:scale(1.12);}
+.float-wa svg{width:30px;height:30px;fill:#fff;}
+
+/* ---------- REVEAL ANIM ---------- */
+.reveal{opacity:0;transform:translateY(36px);transition:.8s cubic-bezier(.2,.7,.3,1);}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  nav ul{position:fixed;top:0;right:-100%;height:100vh;width:min(75vw,320px);background:var(--dark-2);flex-direction:column;justify-content:center;gap:2.2rem;transition:.4s;box-shadow:-10px 0 40px rgba(0,0,0,.5);}
+  nav ul.open{right:0;}
+  .hamburger{display:block;z-index:1001;}
+  .about-wrap,.contact-wrap{grid-template-columns:1fr;}
+  .f-row{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+  .about-img .logo-float{width:100px;height:100px;bottom:-20px;right:0;}
+  .hero-stats{gap:1.6rem;}
+}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr;}.hero-btns .btn{width:100%;justify-content:center;}}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div>📞 <a href="tel:+2348128531210">+234 812 853 1210</a> &nbsp;|&nbsp; ✉️ <a href="mailto:info@emmyrealtor.ng">info@emmyrealtor.ng</a></div>
+  <div class="rc">Emmybrigs Investment Limited · RC 1515627</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="brand">
+    <img src="assets/logo.jpeg" alt="EmmyRealtor Logo">
+    <div>
+      <div class="name">Emmy<span>Realtor</span></div>
+      <div class="tag">The Real Estate Queen</div>
+    </div>
+  </div>
+  <ul id="navMenu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#listings">Properties</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('navMenu').classList.toggle('open')">☰</button>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="bg-shapes"><span></span><span></span><span></span><span></span></div>
+  <div class="hero-inner">
+    <div class="badge">👑 Trusted Real Estate Partner</div>
+    <h1>Find Your <span class="accent">Dream Home</span><br>With The Real Estate Queen</h1>
+    <p>EmmyRealtor helps you buy, sell, rent and invest in premium properties across Nigeria — with integrity, transparency and a touch of royalty.</p>
+    <div class="hero-btns">
+      <a href="#listings" class="btn btn-red">🏠 Explore Properties</a>
+      <a href="https://wa.me/2348128531210" target="_blank" class="btn btn-gold">💬 Chat on WhatsApp</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><h3>500+</h3><p>Happy Clients</p></div>
+      <div class="stat"><h3>300+</h3><p>Properties Sold</p></div>
+      <div class="stat"><h3>₦2B+</h3><p>Property Value</p></div>
+      <div class="stat"><h3>10+</h3><p>Years Experience</p></div>
+    </div>
+  </div>
+</header>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="sec-head reveal">
+    <div class="kicker">What We Do</div>
+    <h2>Our <em>Real Estate</em> Services</h2>
+    <p>From your first home to your next big investment — we handle every step with professionalism and care.</p>
+    <div class="gold-line"></div>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card reveal"><div class="svc-icon">🏡</div><h3>Property Sales</h3><p>Buy verified landed properties, duplexes, terraces and apartments with complete documentation and zero stress.</p></div>
+    <div class="svc-card reveal"><div class="svc-icon">🔑</div><h3>Property Rentals</h3><p>Quality homes and commercial spaces for rent in prime locations — screened, secure and move-in ready.</p></div>
+    <div class="svc-card reveal"><div class="svc-icon">📈</div><h3>Real Estate Investment</h3><p>Grow your wealth with high-ROI off-plan deals, land banking and joint-venture opportunities.</p></div>
+    <div class="svc-card reveal"><div class="svc-icon">📋</div><h3>Property Management</h3><p>Full-service management for landlords — tenant sourcing, rent collection and property maintenance.</p></div>
+    <div class="svc-card reveal"><div class="svc-icon">🗺️</div><h3>Land Verification</h3><p>We verify titles, survey plans and C of O before you pay a single naira. Your safety is our priority.</p></div>
+    <div class="svc-card reveal"><div class="svc-icon">💼</div><h3>Consulting</h3><p>Expert guidance on market trends, pricing and the best locations to buy or build in Nigeria.</p></div>
+  </div>
+</section>
+
+<!-- LISTINGS -->
+<section id="listings">
+  <div class="sec-head reveal">
+    <div class="kicker">Featured</div>
+    <h2>Exclusive <em>Property</em> Listings</h2>
+    <p>A handpicked selection of premium properties currently available through EmmyRealtor.</p>
+    <div class="gold-line"></div>
+  </div>
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" onclick="filterProps('all',this)">All</button>
+    <button class="filter-btn" onclick="filterProps('sale',this)">For Sale</button>
+    <button class="filter-btn" onclick="filterProps('rent',this)">For Rent</button>
+    <button class="filter-btn" onclick="filterProps('land',this)">Land</button>
+  </div>
+  <div class="listings-grid" id="propGrid">
+    <div class="prop-card reveal" data-cat="sale">
+      <div class="prop-img"><span class="prop-tag sale">For Sale</span><img src="assets/prop2.jpeg" alt="Modern duplex"></div>
+      <div class="prop-body"><div class="prop-price">₦85,000,000</div><h3>5-Bedroom Luxury Duplex</h3><div class="prop-loc">📍 Lekki Phase 1, Lagos</div>
+      <div class="prop-feats"><span>🛏 5 Beds</span><span>🛁 6 Baths</span><span>📐 450 sqm</span></div></div>
+    </div>
+    <div class="prop-card reveal" data-cat="sale">
+      <div class="prop-img"><span class="prop-tag sale">For Sale</span><img src="assets/prop4.jpeg" alt="Apartment block"></div>
+      <div class="prop-body"><div class="prop-price">₦45,000,000</div><h3>Brum Heights Luxury Apartments</h3><div class="prop-loc">📍 Ikoyi, Lagos</div>
+      <div class="prop-feats"><span>🛏 3 Beds</span><span>🛁 3 Baths</span><span>📐 220 sqm</span></div></div>
+    </div>
+    <div class="prop-card reveal" data-cat="rent">
+      <div class="prop-img"><span class="prop-tag">For Rent</span><img src="assets/prop5.jpeg" alt="Urban Nest apartments"></div>
+      <div class="prop-body"><div class="prop-price">₦2,500,000 <small>/year</small></div><h3>Modern 2-Bedroom Apartment</h3><div class="prop-loc">📍 Lekki Peninsula II, Lagos</div>
+      <div class="prop-feats"><span>🛏 2 Beds</span><span>🛁 2 Baths</span><span>📐 120 sqm</span></div></div>
+    </div>
+    <div class="prop-card reveal" data-cat="sale">
+      <div class="prop-img"><span class="prop-tag sale">For Sale</span><img src="assets/prop9.jpeg" alt="Luxury modern house"></div>
+      <div class="prop-body"><div class="prop-price">₦120,000,000</div><h3>Contemporary Smart Villa</h3><div class="prop-loc">📍 Banana Island, Lagos</div>
+      <div class="prop-feats"><span>🛏 6 Beds</span><span>🛁 7 Baths</span><span>📐 800 sqm</span></div></div>
+    </div>
+    <div class="prop-card reveal" data-cat="land">
+      <div class="prop-img"><span class="prop-tag">Land</span><img src="assets/prop1.jpeg" alt="Land property"></div>
+      <div class="prop-body"><div class="prop-price">₦18,000,000</div><h3>Dry Land with C of O</h3><div class="prop-loc">📍 Epe, Lagos</div>
+      <div class="prop-feats"><span>📐 600 sqm</span><span>📄 C of O</span><span>✅ Verified</span></div></div>
+    </div>
+    <div class="prop-card reveal" data-cat="rent">
+      <div class="prop-img"><span class="prop-tag">For Rent</span><img src="assets/prop6.jpeg" alt="Family home"></div>
+      <div class="prop-body"><div class="prop-price">₦4,000,000 <small>/year</small></div><h3>4-Bedroom Detached Home</h3><div class="prop-loc">📍 Magodo GRA, Lagos</div>
+      <div class="prop-feats"><span>🛏 4 Beds</span><span>🛁 4 Baths</span><span>📐 350 sqm</span></div></div>
+    </div>
+    <div class="prop-card reveal" data-cat="sale">
+      <div class="prop-img"><span class="prop-tag sale">For Sale</span><img src="assets/prop7.jpeg" alt="Modern African home"></div>
+      <div class="prop-body"><div class="prop-price">₦95,000,000</div><h3>Executive Modern Residence</h3><div class="prop-loc">📍 Abuja, FCT</div>
+      <div class="prop-feats"><span>🛏 5 Beds</span><span>🛁 5 Baths</span><span>📐 500 sqm</span></div></div>
+    </div>
+    <div class="prop-card reveal" data-cat="rent">
+      <div class="prop-img"><span class="prop-tag">Short Let</span><img src="assets/prop8.jpeg" alt="Luxury interior home"></div>
+      <div class="prop-body"><div class="prop-price">₦150,000 <small>/night</small></div><h3>Luxury Short-Let Apartment</h3><div class="prop-loc">📍 Victoria Island, Lagos</div>
+      <div class="prop-feats"><span>🛏 3 Beds</span><span>🛁 3 Baths</span><span>⭐ 5-Star</span></div></div>
+    </div>
+    <div class="prop-card reveal" data-cat="land">
+      <div class="prop-img"><span class="prop-tag">Land</span><img src="assets/prop3.jpeg" alt="Estate land"></div>
+      <div class="prop-body"><div class="prop-price">₦25,000,000</div><h3>Estate Plot (Buy & Build)</h3><div class="prop-loc">📍 Ibeju-Lekki, Lagos</div>
+      <div class="prop-feats"><span>📐 500 sqm</span><span>📄 Gazette</span><span>✅ Verified</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--grey);">
+  <div class="about-wrap">
+    <div class="about-img reveal">
+      <img class="main" src="assets/emmy.jpeg" alt="Emmy - The Real Estate Queen">
+      <img class="logo-float" src="assets/logo.jpeg" alt="EmmyRealtor logo">
+    </div>
+    <div class="about-text reveal">
+      <div class="kicker" style="color:var(--red);letter-spacing:3px;text-transform:uppercase;font-size:.78rem;font-weight:700;">About Us</div>
+      <h2>Meet <em>Emmy</em> — The Real Estate Queen 👑</h2>
+      <p>EmmyRealtor (Emmybrigs Investment Limited, RC 1515627) is a trusted real estate brand dedicated to helping individuals, families and investors acquire genuine properties across Nigeria.</p>
+      <p>Led by Emmy — fondly known as <b>The Real Estate Queen</b> — our mission is simple: to make every property transaction transparent, secure and rewarding. Every property we list is thoroughly verified, so you buy with total peace of mind.</p>
+      <div class="about-points">
+        <div><span class="tick">✓</span> Verified Properties Only</div>
+        <div><span class="tick">✓</span> Zero Hidden Charges</div>
+        <div><span class="tick">✓</span> Flexible Payment Plans</div>
+        <div><span class="tick">✓</span> After-Sale Support</div>
+      </div>
+      <a href="#contact" class="btn btn-red">Work With Us →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="bg-shapes"><span></span><span></span><span></span><span></span></div>
+  <div class="sec-head reveal" style="color:#fff;">
+    <div class="kicker" style="color:var(--gold);">Why Choose Us</div>
+    <h2 style="color:#fff;">The <em style="color:var(--gold);">Queen's</em> Promise</h2>
+    <p style="color:#bbb;">We don't just sell properties — we build lasting relationships and generational wealth.</p>
+    <div class="gold-line"></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal"><div class="num">01</div><h3>100% Verified Titles</h3><p>Every property undergoes rigorous legal verification before listing.</p></div>
+    <div class="why-card reveal"><div class="num">02</div><h3>Prime Locations</h3><p>We focus on high-growth areas with strong appreciation potential.</p></div>
+    <div class="why-card reveal"><div class="num">03</div><h3>Honest Pricing</h3><p>Fair market prices with flexible payment plans that fit your budget.</p></div>
+    <div class="why-card reveal"><div class="num">04</div><h3>Personal Service</h3><p>You deal directly with Emmy — no middlemen, no runaround, no stories.</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="sec-head reveal">
+    <div class="kicker">Testimonials</div>
+    <h2>What Our <em>Clients</em> Say</h2>
+    <p>Real stories from real people who found their dream properties with us.</p>
+    <div class="gold-line"></div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><p>"I bought my first duplex through EmmyRealtor and the process was seamless. Every document was verified and she guided me from inspection to final payment. Truly the Real Estate Queen!"</p>
+      <div class="testi-who"><div class="avatar">CA</div><div><h4>Chiamaka A.</h4><span>Homeowner, Lekki</span></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><p>"As a diaspora investor, I was worried about being scammed. Emmy sent me live video inspections, handled all paperwork and delivered my land with C of O. I trust her completely."</p>
+      <div class="testi-who"><div class="avatar">TO</div><div><h4>Tunde O.</h4><span>Diaspora Investor, UK</span></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><p>"Emmy helped my family secure a beautiful rented apartment in Magodo within two weeks. Professional, responsive and honest. I recommend her to everyone I know."</p>
+      <div class="testi-who"><div class="avatar">FN</div><div><h4>Mrs. Funke N.</h4><span>Tenant, Magodo GRA</span></div></div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--grey);padding-top:5rem;">
+  <div class="sec-head reveal">
+    <div class="kicker">Get In Touch</div>
+    <h2>Let's Find Your <em>Perfect Property</em></h2>
+    <p>Send us a message and the Queen's team will respond within 24 hours.</p>
+    <div class="gold-line"></div>
+  </div>
+  <div class="contact-wrap reveal">
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <p>Reach out through any of these channels — we're always happy to help.</p>
+      <div class="c-item"><div class="ic">📞</div><div><h4>Phone / WhatsApp</h4><a href="tel:+2348128531210">+234 812 853 1210</a></div></div>
+      <div class="c-item"><div class="ic">📧</div><div><h4>Email</h4><a href="mailto:info@emmyrealtor.ng">info@emmyrealtor.ng</a></div></div>
+      <div class="c-item"><div class="ic">📍</div><div><h4>Location</h4><p>Lagos, Nigeria</p></div></div>
+      <div class="c-item"><div class="ic">🏢</div><div><h4>Registered Company</h4><p>Emmybrigs Investment Limited<br>RC 1515627</p></div></div>
+      <div class="socials">
+        <a href="https://www.instagram.com/emmyrealtor" target="_blank" title="Instagram">📷</a>
+        <a href="https://www.facebook.com/share/18A3wMQyh7/?mibextid=wwXIfr" target="_blank" title="Facebook">📘</a>
+        <a href="https://wa.me/2348128531210" target="_blank" title="WhatsApp">💬</a>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="event.preventDefault();alert('Thank you! Your message has been sent. EmmyRealtor will contact you shortly. 👑');this.reset();">
+      <h3>Send a Message</h3>
+      <p>Fill the form below and we'll get back to you shortly.</p>
+      <div class="f-row">
+        <div class="f-group"><label>Full Name *</label><input type="text" required placeholder="Your name"></div>
+        <div class="f-group"><label>Phone Number *</label><input type="tel" required placeholder="+234 ..."></div>
+      </div>
+      <div class="f-group"><label>Email Address</label><input type="email" placeholder="you@email.com"></div>
+      <div class="f-group"><label>I'm Interested In *</label>
+        <select required>
+          <option value="">Select a service...</option>
+          <option>Buying a Property</option>
+          <option>Renting a Property</option>
+          <option>Land / Investment</option>
+          <option>Property Management</option>
+          <option>Land Verification</option>
+          <option>General Enquiry</option>
+        </select>
+      </div>
+      <div class="f-group"><label>Message *</label><textarea required placeholder="Tell us what you're looking for..."></textarea></div>
+      <button type="submit" class="btn btn-red" style="width:100%;justify-content:center;">Send Message 👑</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="assets/logo.jpeg" alt="EmmyRealtor logo">
+      <h4>Emmy<span style="color:var(--red);">Realtor</span></h4>
+      <p>The Real Estate Queen — helping you buy, sell, rent and invest in verified properties across Nigeria with confidence and peace of mind.</p>
+    </div>
+    <div><h5>Quick Links</h5><ul>
+      <li><a href="#home">Home</a></li><li><a href="#services">Services</a></li>
+      <li><a href="#listings">Properties</a></li><li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li></ul></div>
+    <div><h5>Services</h5><ul>
+      <li><a href="#services">Property Sales</a></li><li><a href="#services">Rentals</a></li>
+      <li><a href="#services">Investment</a></li><li><a href="#services">Management</a></li>
+      <li><a href="#services">Verification</a></li></ul></div>
+    <div><h5>Contact</h5><ul>
+      <li>📞 <a href="tel:+2348128531210">+234 812 853 1210</a></li>
+      <li>📷 <a href="https://www.instagram.com/emmyrealtor" target="_blank">@emmyrealtor</a></li>
+      <li>📘 <a href="https://www.facebook.com/share/18A3wMQyh7/?mibextid=wwXIfr" target="_blank">Facebook Page</a></li>
+      <li>🏢 Emmybrigs Investment Ltd · RC 1515627</li></ul></div>
+  </div>
+  <div class="foot-bottom">
+    <div>©️ 2026 <b>EmmyRealtor</b> — All Rights Reserved</div>
+    <div>👑 The Real Estate Queen</div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="float-wa" href="https://wa.me/2348128531210" target="_blank" title="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 2 6.5L4 29l7.7-2c1.8 1 3.9 1.5 6 1.5h.3c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22.5c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-4 1 1.1-3.9-.3-.4c-1.1-1.7-1.7-3.6-1.7-5.6C5.5 9.2 10.2 4.5 16 4.5S26.5 9.2 26.5 15 21.8 25.5 16 25.5zm5.8-7.7c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.5 4.9.8.3 1.4.5 1.9.7.8.2 1.5.2 2 .1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<script>
+// Filter properties
+function filterProps(cat, btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.prop-card').forEach(card=>{
+    card.style.display = (cat==='all' || card.dataset.cat===cat) ? 'block' : 'none';
+  });
+}
+// Scroll reveal
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Close mobile menu on link click
+document.querySelectorAll('#navMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navMenu').classList.remove('open')));
+</script>
+</body>
+</html>
