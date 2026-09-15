@@ -37,9 +37,22 @@ nav ul a:hover::after{width:100%;}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(200,16,46,.45);}
 .hamburger{display:none;color:#fff;font-size:1.6rem;background:none;border:none;cursor:pointer;}
 
+/* ---------- ANIMATED BACKGROUND SHAPES ---------- */
+.bg-shapes{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;}
+.bg-shapes span{position:absolute;border-radius:50%;filter:blur(70px);opacity:.4;animation:floatBg 20s ease-in-out infinite;}
+.bg-shapes span:nth-child(1){width:360px;height:360px;background:var(--red);top:-100px;left:-80px;animation-duration:24s;}
+.bg-shapes span:nth-child(2){width:280px;height:280px;background:var(--gold);bottom:-80px;right:-60px;animation-duration:28s;animation-delay:-6s;}
+.bg-shapes span:nth-child(3){width:220px;height:220px;background:var(--gold-light);top:35%;left:55%;animation-duration:22s;animation-delay:-10s;}
+.bg-shapes span:nth-child(4){width:180px;height:180px;background:var(--red);top:15%;right:15%;animation-duration:26s;animation-delay:-14s;}
+@keyframes floatBg{
+  0%,100%{transform:translate(0,0) scale(1);}
+  33%{transform:translate(50px,-40px) scale(1.12);}
+  66%{transform:translate(-40px,35px) scale(.92);}
+}
+
 /* ---------- HERO ---------- */
-.hero{min-height:92vh;position:relative;display:flex;align-items:center;background:linear-gradient(rgba(10,10,10,.72),rgba(10,10,10,.82)),url('assets/prop4.jpg') center/cover no-repeat;}
-.hero-inner{padding:0 5%;max-width:1200px;color:#fff;}
+.hero{min-height:92vh;position:relative;overflow:hidden;display:flex;align-items:center;background:linear-gradient(rgba(10,10,10,.72),rgba(10,10,10,.82)),url('assets/hero-bg.jpeg') center/cover no-repeat;}
+.hero-inner{position:relative;z-index:1;padding:0 5%;max-width:1200px;color:#fff;}
 .hero .badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(212,175,55,.15);border:1px solid var(--gold);color:var(--gold-light);padding:.4rem 1.1rem;border-radius:30px;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:1.4rem;}
 .hero h1{font-size:clamp(2.4rem,5.5vw,4.2rem);line-height:1.12;margin-bottom:1.2rem;}
 .hero h1 .accent{background:linear-gradient(90deg,var(--red) 0%,#ff5c72 50%,var(--gold) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic;}
@@ -61,7 +74,8 @@ section{padding:5.5rem 5%;}
 .sec-head h2{font-size:clamp(1.9rem,3.5vw,2.7rem);margin:.6rem 0 .9rem;}
 .sec-head h2 em{color:var(--red);}
 .sec-head p{color:#666;line-height:1.7;}
-.gold-line{width:70px;height:3px;background:linear-gradient(90deg,var(--red),var(--gold));margin:1rem auto 0;border-radius:2px;}
+.gold-line{width:70px;height:3px;background:linear-gradient(90deg,var(--red),var(--gold));margin:1rem auto 0;border-radius:2px;animation:shimmerLine 3s ease-in-out infinite alternate;}
+@keyframes shimmerLine{0%{opacity:.6;width:50px;}100%{opacity:1;width:90px;}}
 
 /* ---------- SERVICES ---------- */
 .services{background:var(--grey);}
@@ -108,7 +122,8 @@ section{padding:5.5rem 5%;}
 .about-points .tick{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;}
 
 /* ---------- WHY ---------- */
-.why{background:linear-gradient(rgba(13,13,13,.94),rgba(13,13,13,.94)),url('assets/prop3.jpg') center/cover fixed;color:#fff;}
+.why{position:relative;overflow:hidden;background:linear-gradient(rgba(13,13,13,.94),rgba(13,13,13,.94)),url('assets/why-bg.jpeg') center/cover fixed;color:#fff;}
+.why .sec-head,.why-grid{position:relative;z-index:1;}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.6rem;max-width:1200px;margin:0 auto;}
 .why-card{background:rgba(255,255,255,.05);border:1px solid rgba(212,175,55,.25);border-radius:16px;padding:2rem 1.6rem;text-align:center;transition:.35s;}
 .why-card:hover{background:rgba(212,175,55,.1);transform:translateY(-6px);border-color:var(--gold);}
@@ -198,7 +213,7 @@ footer ul a:hover{color:var(--gold);padding-left:5px;}
 <!-- NAV -->
 <nav>
   <div class="brand">
-    <img src="assets/logo.jpg" alt="EmmyRealtor Logo">
+    <img src="assets/logo.jpeg" alt="EmmyRealtor Logo">
     <div>
       <div class="name">Emmy<span>Realtor</span></div>
       <div class="tag">The Real Estate Queen</div>
@@ -217,6 +232,7 @@ footer ul a:hover{color:var(--gold);padding-left:5px;}
 
 <!-- HERO -->
 <header class="hero" id="home">
+  <div class="bg-shapes"><span></span><span></span><span></span><span></span></div>
   <div class="hero-inner">
     <div class="badge">👑 Trusted Real Estate Partner</div>
     <h1>Find Your <span class="accent">Dream Home</span><br>With The Real Estate Queen</h1>
@@ -268,47 +284,47 @@ footer ul a:hover{color:var(--gold);padding-left:5px;}
   </div>
   <div class="listings-grid" id="propGrid">
     <div class="prop-card reveal" data-cat="sale">
-      <div class="prop-img"><span class="prop-tag sale">For Sale</span><img src="assets/prop2.jpg" alt="Modern duplex"></div>
+      <div class="prop-img"><span class="prop-tag sale">For Sale</span><img src="assets/prop2.jpeg" alt="Modern duplex"></div>
       <div class="prop-body"><div class="prop-price">₦85,000,000</div><h3>5-Bedroom Luxury Duplex</h3><div class="prop-loc">📍 Lekki Phase 1, Lagos</div>
       <div class="prop-feats"><span>🛏 5 Beds</span><span>🛁 6 Baths</span><span>📐 450 sqm</span></div></div>
     </div>
     <div class="prop-card reveal" data-cat="sale">
-      <div class="prop-img"><span class="prop-tag sale">For Sale</span><img src="assets/prop4.jpg" alt="Apartment block"></div>
+      <div class="prop-img"><span class="prop-tag sale">For Sale</span><img src="assets/prop4.jpeg" alt="Apartment block"></div>
       <div class="prop-body"><div class="prop-price">₦45,000,000</div><h3>Brum Heights Luxury Apartments</h3><div class="prop-loc">📍 Ikoyi, Lagos</div>
       <div class="prop-feats"><span>🛏 3 Beds</span><span>🛁 3 Baths</span><span>📐 220 sqm</span></div></div>
     </div>
     <div class="prop-card reveal" data-cat="rent">
-      <div class="prop-img"><span class="prop-tag">For Rent</span><img src="assets/prop5.jpg" alt="Urban Nest apartments"></div>
+      <div class="prop-img"><span class="prop-tag">For Rent</span><img src="assets/prop5.jpeg" alt="Urban Nest apartments"></div>
       <div class="prop-body"><div class="prop-price">₦2,500,000 <small>/year</small></div><h3>Modern 2-Bedroom Apartment</h3><div class="prop-loc">📍 Lekki Peninsula II, Lagos</div>
       <div class="prop-feats"><span>🛏 2 Beds</span><span>🛁 2 Baths</span><span>📐 120 sqm</span></div></div>
     </div>
     <div class="prop-card reveal" data-cat="sale">
-      <div class="prop-img"><span class="prop-tag sale">For Sale</span><img src="assets/prop9.jpg" alt="Luxury modern house"></div>
+      <div class="prop-img"><span class="prop-tag sale">For Sale</span><img src="assets/prop9.jpeg" alt="Luxury modern house"></div>
       <div class="prop-body"><div class="prop-price">₦120,000,000</div><h3>Contemporary Smart Villa</h3><div class="prop-loc">📍 Banana Island, Lagos</div>
       <div class="prop-feats"><span>🛏 6 Beds</span><span>🛁 7 Baths</span><span>📐 800 sqm</span></div></div>
     </div>
     <div class="prop-card reveal" data-cat="land">
-      <div class="prop-img"><span class="prop-tag">Land</span><img src="assets/prop1.jpg" alt="Land property"></div>
+      <div class="prop-img"><span class="prop-tag">Land</span><img src="assets/prop1.jpeg" alt="Land property"></div>
       <div class="prop-body"><div class="prop-price">₦18,000,000</div><h3>Dry Land with C of O</h3><div class="prop-loc">📍 Epe, Lagos</div>
       <div class="prop-feats"><span>📐 600 sqm</span><span>📄 C of O</span><span>✅ Verified</span></div></div>
     </div>
     <div class="prop-card reveal" data-cat="rent">
-      <div class="prop-img"><span class="prop-tag">For Rent</span><img src="assets/prop6.jpg" alt="Family home"></div>
+      <div class="prop-img"><span class="prop-tag">For Rent</span><img src="assets/prop6.jpeg" alt="Family home"></div>
       <div class="prop-body"><div class="prop-price">₦4,000,000 <small>/year</small></div><h3>4-Bedroom Detached Home</h3><div class="prop-loc">📍 Magodo GRA, Lagos</div>
       <div class="prop-feats"><span>🛏 4 Beds</span><span>🛁 4 Baths</span><span>📐 350 sqm</span></div></div>
     </div>
     <div class="prop-card reveal" data-cat="sale">
-      <div class="prop-img"><span class="prop-tag sale">For Sale</span><img src="assets/prop7.jpg" alt="Modern African home"></div>
+      <div class="prop-img"><span class="prop-tag sale">For Sale</span><img src="assets/prop7.jpeg" alt="Modern African home"></div>
       <div class="prop-body"><div class="prop-price">₦95,000,000</div><h3>Executive Modern Residence</h3><div class="prop-loc">📍 Abuja, FCT</div>
       <div class="prop-feats"><span>🛏 5 Beds</span><span>🛁 5 Baths</span><span>📐 500 sqm</span></div></div>
     </div>
     <div class="prop-card reveal" data-cat="rent">
-      <div class="prop-img"><span class="prop-tag">Short Let</span><img src="assets/prop8.jpg" alt="Luxury interior home"></div>
+      <div class="prop-img"><span class="prop-tag">Short Let</span><img src="assets/prop8.jpeg" alt="Luxury interior home"></div>
       <div class="prop-body"><div class="prop-price">₦150,000 <small>/night</small></div><h3>Luxury Short-Let Apartment</h3><div class="prop-loc">📍 Victoria Island, Lagos</div>
       <div class="prop-feats"><span>🛏 3 Beds</span><span>🛁 3 Baths</span><span>⭐ 5-Star</span></div></div>
     </div>
     <div class="prop-card reveal" data-cat="land">
-      <div class="prop-img"><span class="prop-tag">Land</span><img src="assets/prop3.jpg" alt="Estate land"></div>
+      <div class="prop-img"><span class="prop-tag">Land</span><img src="assets/prop3.jpeg" alt="Estate land"></div>
       <div class="prop-body"><div class="prop-price">₦25,000,000</div><h3>Estate Plot (Buy & Build)</h3><div class="prop-loc">📍 Ibeju-Lekki, Lagos</div>
       <div class="prop-feats"><span>📐 500 sqm</span><span>📄 Gazette</span><span>✅ Verified</span></div></div>
     </div>
@@ -319,8 +335,8 @@ footer ul a:hover{color:var(--gold);padding-left:5px;}
 <section id="about" style="background:var(--grey);">
   <div class="about-wrap">
     <div class="about-img reveal">
-      <img class="main" src="assets/prop10.jpg" alt="Luxury interior">
-      <img class="logo-float" src="assets/logo.jpg" alt="EmmyRealtor logo">
+      <img class="main" src="assets/emmy.jpeg" alt="Emmy - The Real Estate Queen">
+      <img class="logo-float" src="assets/logo.jpeg" alt="EmmyRealtor logo">
     </div>
     <div class="about-text reveal">
       <div class="kicker" style="color:var(--red);letter-spacing:3px;text-transform:uppercase;font-size:.78rem;font-weight:700;">About Us</div>
@@ -340,6 +356,7 @@ footer ul a:hover{color:var(--gold);padding-left:5px;}
 
 <!-- WHY US -->
 <section class="why">
+  <div class="bg-shapes"><span></span><span></span><span></span><span></span></div>
   <div class="sec-head reveal" style="color:#fff;">
     <div class="kicker" style="color:var(--gold);">Why Choose Us</div>
     <h2 style="color:#fff;">The <em style="color:var(--gold);">Queen's</em> Promise</h2>
@@ -442,7 +459,7 @@ footer ul a:hover{color:var(--gold);padding-left:5px;}
       <li>🏢 Emmybrigs Investment Ltd · RC 1515627</li></ul></div>
   </div>
   <div class="foot-bottom">
-    <div>© 2026 <b>EmmyRealtor</b> — All Rights Reserved</div>
+    <div>©️ 2026 <b>EmmyRealtor</b> — All Rights Reserved</div>
     <div>👑 The Real Estate Queen</div>
   </div>
 </footer>
